@@ -1,0 +1,7 @@
+npx create-react-app example-app
+cd example-app
+
+React Routing :
+=> npm install react-router-dom
+kegunaan untuk navigasi ketika kita membuat link di aplikasi react kita butuh react router
+
