@@ -12,7 +12,7 @@ function Header(){
                     <Nav className="me-auto navbar_wrapper">
                         <Link to="/login">Login</Link>
                         <Link to="/register">Register</Link>
-                        <Link to="/Add">Add Product</Link>
+                        <Link to="/add">Add Product</Link>
                         <Link to="/update">Update Product</Link>
                     </Nav>
                 </Container>
