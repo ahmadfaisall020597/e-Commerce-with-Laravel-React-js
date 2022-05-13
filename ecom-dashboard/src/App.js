@@ -7,6 +7,7 @@ import Login from './Login';
 import Register from './Register';
 import AddProduct from './AddProduct';
 import UpdateProduct from './UpdateProduct';
+import Protected from './Protected';
 // function Home(){
 //   return (
 //     <div>
@@ -18,12 +19,13 @@ import UpdateProduct from './UpdateProduct';
 function App() {
   return (
     <div className="App">
-      <Header />
       <Routes>
       {/* <Route path="/" element={<Home />}></Route> */}
       <Route path="Login" element={<Login />}></Route>
       <Route path="Register" element={<Register />}></Route>
-      <Route path="Add" element={<AddProduct />}></Route>
+      <Route path="Add" element={<AddProduct />}>
+        <Protected/>
+      </Route>
       <Route path="Update" element={<UpdateProduct />}></Route>
       </Routes>
     </div>

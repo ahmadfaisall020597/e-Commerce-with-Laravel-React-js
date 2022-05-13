@@ -1,8 +1,10 @@
-function AddProduct(){
+import Header from "./Header";
+function AddProducts(){
     return(
         <div>
+            <Header/>
             <h1>Halaman Add Product</h1>
         </div>
     )
 }
-export default AddProduct
+export default AddProducts
