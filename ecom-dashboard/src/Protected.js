@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import {useNavigate} from "react-router-dom";
+import {Navigate, Outlet, useNavigate} from "react-router-dom";
 function Protected(props){
     const navigate = useNavigate();
     let Cmp = props.Cmp;
@@ -10,9 +10,15 @@ function Protected(props){
     }, []);
     return (
         <div>
-            <Cmp/>
+            {Cmp}
         </div>
     )
 }
+
+// const Protected = () => {
+//     const auth = null;
+
+//     return auth ? <Outlet/> : <Navigate to="/register"/>
+// }
 
 export default Protected
