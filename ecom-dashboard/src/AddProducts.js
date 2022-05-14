@@ -1,8 +1,8 @@
 import Header from "./Header";
-function AddProducts(){
-    return(
+function AddProducts() {
+    return (
         <div>
-            <Header/>
+            <Header />
             <h1>Halaman Add Product</h1>
         </div>
     )

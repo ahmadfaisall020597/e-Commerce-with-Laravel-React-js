@@ -1,8 +1,8 @@
 import Header from "./Header";
-function UpdateProduct(){
-    return(
+function UpdateProduct() {
+    return (
         <div>
-            <Header/>
+            <Header />
             <h1>Halaman Update Product</h1>
         </div>
     )

@@ -1,8 +1,15 @@
-import { Navbar } from 'react-bootstrap';
+import { Navbar, NavDropdown } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 function Header() {
+    let user = JSON.parse(localStorage.getItem("user-info"));
+    const navigate = useNavigate();
+    function logout() {
+        localStorage.clear();
+        navigate("/register");
+    }
+    console.warn(user);
     return (
         <div>
 
@@ -13,8 +20,8 @@ function Header() {
                         {
                             localStorage.getItem("user-info") ? (
                                 <>
-                                    <Link to="/add">Add Product</Link>
-                                    <Link to="/update">Update Product</Link>
+                                    <Link to="/add">Add Products</Link>
+                                    <Link to="/update">Update AddProducts</Link>
                                 </>
                             ) : (
                                 <>
@@ -23,6 +30,16 @@ function Header() {
                                 </>
                             )}
                     </Nav>
+                    {localStorage.getItem("user-info") ?
+                        <Nav>
+                            <NavDropdown title={user && user.name}>
+                                <NavDropdown.ItemText onClick={(logout)}>
+                                    Logout
+                                </NavDropdown.ItemText>
+                            </NavDropdown>
+                        </Nav>
+                        : null
+                    }
                 </Container>
             </Navbar>
 
