@@ -1,7 +1,9 @@
 import Header from "./Header";
 import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
+import { Alert } from "react-bootstrap";
 function Login() {
+    const [showAlert, setShowAlert] = useState(false);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
@@ -11,20 +13,23 @@ function Login() {
         }
     }, []);
 
-    async function login() {
+    function login() {
         console.warn(email, password)
         let item = { email, password };
-        let result = await fetch("http://localhost:8000/api/login", {
+        fetch("http://localhost:8000/api/login", {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "aplication/json"
             },
             body: JSON.stringify(item)
-        });
-        result = await result.json();
-        localStorage.setItem("user-info", JSON.stringify(result))
-        navigate("/add")
+        }).then((response) => {
+            if (response.status === 401) setShowAlert(true)
+            else return response.json()
+        }).then((data) => {
+            localStorage.setItem("user-info", JSON.stringify(data))
+            navigate("/add");
+        })
     }
 
     return (
@@ -32,6 +37,9 @@ function Login() {
             <Header />
             <h1>Login</h1>
             <br />
+            <Alert variant="warning" show={showAlert}>
+                Sorry, Email or Password doesn't match
+            </Alert>
             <div className="col-sm-6 offset-sm-3">
                 <input
                     type="text"
@@ -58,4 +66,5 @@ function Login() {
         </div>
     )
 }
+
 export default Login

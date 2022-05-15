@@ -13,7 +13,7 @@ class ProductController extends Controller
         // return $req->file('file')->store('products'); // untuk membuat atau upload file gambar dengan API. location Storage/App/Product
         $product = new Product;
         $product->name = $req->input('name');
-        // $product->file_path = $req->file('file')->store('products');
+        $product->file_path = $req->file('file')->store('products');
         $product->description = $req->input('description');
         $product->price = $req->input('price');
         $product->save();
