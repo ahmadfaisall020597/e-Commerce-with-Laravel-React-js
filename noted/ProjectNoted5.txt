@@ -1,6 +1,0 @@
-ADD Product
-
-1. Membuat tabel untuk add product
-2. mentimpan/upload gambar
-3. menyimpan data produk ke dalam database
-4. membuat form untuk add product dan integrasi API

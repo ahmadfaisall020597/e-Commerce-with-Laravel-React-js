@@ -1,4 +1,0 @@
-Fungsionalitas Logout & Login
-
-1. Menampilkan/Menyembunyikan navigasi
-2. Redireksi Logout/Login

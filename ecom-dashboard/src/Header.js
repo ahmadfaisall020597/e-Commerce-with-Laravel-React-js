@@ -3,11 +3,11 @@ import { Container } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 function Header() {
-    let user = JSON.parse(localStorage.getItem("user-info"));
+    let user =JSON.parse(localStorage.getItem("user-info"));
     const navigate = useNavigate();
     function logout() {
         localStorage.clear();
-        navigate("/register");
+        navigate("register");
     }
     console.warn(user);
     return (
@@ -15,13 +15,14 @@ function Header() {
 
             <Navbar bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand href="#home">e-Commerce</Navbar.Brand>
+                    <Navbar.Brand href="/">e-Commerce</Navbar.Brand>
                     <Nav className="me-auto navbar_wrapper">
                         {
                             localStorage.getItem("user-info") ? (
                                 <>
+                                    <Link to="/list">Product List</Link>
                                     <Link to="/add">Add Products</Link>
-                                    <Link to="/update">Update AddProducts</Link>
+                                    <Link to="/update">Update Products</Link>
                                 </>
                             ) : (
                                 <>

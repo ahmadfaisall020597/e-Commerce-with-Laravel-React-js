@@ -1,6 +1,0 @@
-Project Routing :
-1. Membuat Components
-2. Membuat Header
-3. Define Routing
-4. Menggunakan Bootstrap Navbar
-5. Membuat Links

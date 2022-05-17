@@ -1,0 +1,11 @@
+Configurasi folder storage menjadi public :
+
+
+masuk folder config -> filesystem
+
+ 'links' => [
+        public_path('nama folder yg mau di public') => storage_path('app/nama folder yg dipilih'),
+    ],
+
+next step ketikan diterminal :
+php artisan storage:link

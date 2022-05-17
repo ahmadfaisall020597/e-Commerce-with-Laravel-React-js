@@ -1,6 +1,0 @@
-Protected Route
-
-1. Menyembunyikan Halaman Login dan Register setelah registrasi selesai
-2. Membuat protected route
-3. Redirect product page
-4. Menguji complete flow

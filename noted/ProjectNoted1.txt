@@ -1,9 +1,0 @@
-1. Membuat database dan table
-2. Koneksi database ke Laravel
-3. Membuat Controller dan Router di laravel
-4. Mengirim data dari Postman dan mentimpan user ke database
-5. Uji coba API sign up
-
-
-
-routes -> api.php = di pakai untuk mengatur hubungan antara frontend dengan backend

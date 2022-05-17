@@ -1,6 +1,0 @@
-Integrasi API Register / Sign
-
-1. Membuat Form, dan mem-retrieve nilai dari form
-2. Mengirim data ke backend API
-3. Menyimpan data di local storage
-4. Menguji complete flow untuk API

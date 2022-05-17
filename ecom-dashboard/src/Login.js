@@ -13,23 +13,26 @@ function Login() {
         }
     }, []);
 
-    function login() {
+    async function login() {
         console.warn(email, password)
         let item = { email, password };
-        fetch("http://localhost:8000/api/login", {
+        const result = await fetch("http://localhost:8000/api/login", {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "aplication/json"
             },
             body: JSON.stringify(item)
-        }).then((response) => {
-            if (response.status === 401) setShowAlert(true)
-            else return response.json()
-        }).then((data) => {
-            localStorage.setItem("user-info", JSON.stringify(data))
-            navigate("/add");
-        })
+        });
+
+        if (result.status === 401) {
+            setShowAlert(true);
+            return;
+        }
+
+        const json = await result.json()
+        localStorage.setItem("user-info", JSON.stringify(await json))
+        navigate("/add");
     }
 
     return (

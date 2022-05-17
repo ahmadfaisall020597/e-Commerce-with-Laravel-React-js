@@ -5,7 +5,7 @@ function Protected(props) {
     let Cmp = props.Cmp;
     useEffect(() => {
         if (!localStorage.getItem("user-info")) {
-            navigate("/register");
+            navigate("register");
         }
     }, []);
     return (

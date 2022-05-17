@@ -56,15 +56,13 @@ function AddProducts() {
                     onChange={(e) => setPrice(e.target.value)}>
                 </input>
                 <br />
-
-                <input
+                <textarea
                     type="text"
                     className="form-control"
                     placeholder="Description"
                     onChange={(e) => setDescription(e.target.value)}>
-                </input>
+                </textarea>
                 <br />
-
                 <button className="btn btn-primary" onClick={addProduct}>Add Product</button>
             </div>
         </div>

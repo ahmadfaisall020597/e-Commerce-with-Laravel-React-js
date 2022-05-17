@@ -19,4 +19,9 @@ class ProductController extends Controller
         $product->save();
         return $req->input();
     }
+
+    function listProduct()
+    {
+        return Product::all();
+    }
 }
