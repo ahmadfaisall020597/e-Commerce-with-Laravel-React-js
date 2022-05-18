@@ -18,7 +18,7 @@ function Login() {
     async function login() {
         console.warn(email, password)
         let item = { email, password };
-        const result = await fetch("http://localhost:8000/api/login", {
+        const result = await fetch("http://localhost/api/login", {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
