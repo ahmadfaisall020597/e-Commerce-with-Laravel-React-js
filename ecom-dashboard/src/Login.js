@@ -36,7 +36,7 @@ function Login() {
     }
 
     return (
-        <div>
+        <div className='h-screen w-screen bg-cover bg-no-repeat' style={{ backgroundImage: 'url("/img/test.jpg")' }}>
             <Header />
             <h1>Login</h1>
             <br />

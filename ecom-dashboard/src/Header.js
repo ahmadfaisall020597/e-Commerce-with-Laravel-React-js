@@ -7,12 +7,11 @@ function Header() {
     const navigate = useNavigate();
     function logout() {
         localStorage.clear();
-        navigate("register");
+        navigate("/register");
     }
     console.warn(user);
     return (
         <div>
-
             <Navbar bg="dark" variant="dark">
                 <Container>
                     <Navbar.Brand href="/">e-Commerce</Navbar.Brand>
